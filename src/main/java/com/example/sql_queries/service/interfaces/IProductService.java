@@ -1,6 +1,6 @@
 package com.example.sql_queries.service.interfaces;
 
-import com.example.sql_queries.entity.Product;
+import com.example.sql_queries.entity.mysql.Product;
 
 import java.util.List;
 

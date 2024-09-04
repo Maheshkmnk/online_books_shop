@@ -1,4 +1,5 @@
-package com.example.sql_queries.entity;
+package com.example.sql_queries.entity.mysql;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,25 +7,20 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "pid")
+@NoArgsConstructor
+@EqualsAndHashCode(of = "aid")
 @Entity
-public class Product {
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pid;
-    private String name;
-    private double price;
-    private Long quantityAvailable;
+    private Long aid;
+    private String city;
+    private String state;
+    private String nationality;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-
-    @ManyToMany(mappedBy = "products")
-    private List<Orders> orders;
 }

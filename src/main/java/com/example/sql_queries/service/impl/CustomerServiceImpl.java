@@ -1,10 +1,11 @@
 package com.example.sql_queries.service.impl;
 
-import com.example.sql_queries.dao.CustomerDao;
+import com.example.sql_queries.dao.mysql.CustomerDao;
 import com.example.sql_queries.dto.LoginRequestDto;
 import com.example.sql_queries.dto.RegisterCustomerRequestDto;
 import com.example.sql_queries.dto.responseDto.ResponseDto;
-import com.example.sql_queries.entity.Customer;
+import com.example.sql_queries.entity.mysql.Customer;
+import com.example.sql_queries.exceptions.individual_exceptions.DuplicateEntryException;
 import com.example.sql_queries.mappers.CustomerPopulator;
 import com.example.sql_queries.service.interfaces.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,13 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     public ResponseDto register(RegisterCustomerRequestDto registerCustomerRequestDto) {
         Customer customerEntity = CustomerPopulator.INSTANCE.toEntity(registerCustomerRequestDto);
+        boolean isExisted = customerDao.existsByEmail(registerCustomerRequestDto.getEmail());
+
+        if (isExisted) {
+            System.out.println("ajdfkjsdfksjfksdjbvksjdvksjvsjv");
+           throw new DuplicateEntryException("User Already existed with the given email id");
+        }
+
         Customer customer = customerDao.save(customerEntity);
         return CustomerPopulator.INSTANCE.toDto(customer);
     }

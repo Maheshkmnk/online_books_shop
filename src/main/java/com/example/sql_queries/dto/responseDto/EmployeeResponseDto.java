@@ -1,7 +1,7 @@
-package com.example.sql_queries.dto;
+package com.example.sql_queries.dto.responseDto;
 
+import com.example.sql_queries.dto.AddressDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,11 +10,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class RegisterCustomerRequestDto {
-    private String cname;
+public class EmployeeResponseDto {
+    private Long eid;
+    private String ename;
     private String email;
     private Integer age;
-    private String password;
-    private List<AddressDto> address;
 }

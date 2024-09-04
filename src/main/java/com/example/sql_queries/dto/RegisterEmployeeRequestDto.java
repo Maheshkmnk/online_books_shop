@@ -11,10 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RegisterCustomerRequestDto {
-    private String cname;
+public class RegisterEmployeeRequestDto {
+    private String ename;
     private String email;
     private Integer age;
     private String password;
-    private List<AddressDto> address;
 }

@@ -1,4 +1,4 @@
-package com.example.sql_queries.entity;
+package com.example.sql_queries.entity.mysql;
 
 
 import jakarta.persistence.*;
