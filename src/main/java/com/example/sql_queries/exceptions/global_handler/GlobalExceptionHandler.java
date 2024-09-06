@@ -1,5 +1,6 @@
 package com.example.sql_queries.exceptions.global_handler;
 
+import com.example.sql_queries.exceptions.individual_exceptions.CSVFileProcessingError;
 import com.example.sql_queries.exceptions.individual_exceptions.DuplicateEntryException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,5 +12,9 @@ public class GlobalExceptionHandler{
     @ExceptionHandler(DuplicateEntryException.class)
     public ResponseEntity<String> handleDuplicateEntryException(DuplicateEntryException ex){
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+    }
+
+    public ResponseEntity<String> handleCSVFileProcessingError(CSVFileProcessingError ex){
+        return new ResponseEntity<>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
     }
 }

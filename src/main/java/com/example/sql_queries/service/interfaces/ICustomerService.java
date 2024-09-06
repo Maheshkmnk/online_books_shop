@@ -16,5 +16,5 @@ public interface ICustomerService {
 
     String updatePassword();
 
-    String processCsvFile(MultipartFile file);
+    List<RegisterCustomerRequestDto> processCsvFile(MultipartFile file);
 }
