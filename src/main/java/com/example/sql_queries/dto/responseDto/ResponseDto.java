@@ -1,6 +1,6 @@
 package com.example.sql_queries.dto.responseDto;
 
-import com.example.sql_queries.dto.AddressDto;
+import com.example.sql_queries.dto.request_dto.AddressDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

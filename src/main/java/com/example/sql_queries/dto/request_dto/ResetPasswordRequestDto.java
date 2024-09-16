@@ -1,4 +1,4 @@
-package com.example.sql_queries.dto;
+package com.example.sql_queries.dto.request_dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.example.sql_queries.dto;
+package com.example.sql_queries.dto.request_dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,9 +11,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RegisterEmployeeRequestDto {
-    private String ename;
+public class RegisterCustomerRequestDto {
+    private String cname;
     private String email;
     private Integer age;
     private String password;
+    private List<AddressDto> address;
 }

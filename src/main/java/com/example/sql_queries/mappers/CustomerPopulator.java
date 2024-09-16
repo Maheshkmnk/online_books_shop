@@ -1,10 +1,9 @@
 package com.example.sql_queries.mappers;
 
-import com.example.sql_queries.dto.RegisterCustomerRequestDto;
+import com.example.sql_queries.dto.request_dto.RegisterCustomerRequestDto;
 import com.example.sql_queries.dto.responseDto.ResponseDto;
 import com.example.sql_queries.entity.mysql.Customer;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper

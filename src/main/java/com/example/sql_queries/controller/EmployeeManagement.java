@@ -1,7 +1,7 @@
 package com.example.sql_queries.controller;
 
 
-import com.example.sql_queries.dto.RegisterEmployeeRequestDto;
+import com.example.sql_queries.dto.request_dto.RegisterEmployeeRequestDto;
 import com.example.sql_queries.dto.responseDto.EmployeeResponseDto;
 import com.example.sql_queries.service.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
