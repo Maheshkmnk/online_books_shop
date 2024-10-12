@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employee")
 public class EmployeeManagement {
@@ -21,6 +23,12 @@ public class EmployeeManagement {
             @RequestBody RegisterEmployeeRequestDto employeeRequestDto) {
         EmployeeResponseDto employeeResponseDto = employeeServiceImpl.registerEmployee(employeeRequestDto);
         return new ResponseEntity<>(employeeResponseDto, HttpStatus.OK);
+    }
+
+
+    @PostMapping("/reactive-service-customers-to-employee")
+    public ResponseEntity<List<EmployeeResponseDto>> CustToEmployeeRegister(){
+        return new ResponseEntity<>(employeeServiceImpl.registerAll(), HttpStatus.OK);
     }
 
 }

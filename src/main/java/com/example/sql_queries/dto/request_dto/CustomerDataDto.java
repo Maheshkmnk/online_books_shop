@@ -1,18 +1,15 @@
 package com.example.sql_queries.dto.request_dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class RegisterEmployeeRequestDto {
-    private String ename;
-    private String email;
+public class CustomerDataDto {
+    private String name;
     private Integer age;
+    private String email;
     private String password;
 }
